@@ -10,13 +10,11 @@ export const middleware = async (req:NextRequest ) => {
  
         return NextResponse.next()
     }
-    const url = req.nextUrl.clone()
-    url.pathname = '/login'
-    
-    
-    if(!token&&pathname!=='/login'){
-        return NextResponse.redirect(url)
-    }
+    // const url = req.nextUrl.clone()
+    // url.pathname = '/login'
+    // if(!token&&pathname!=='/login'){
+    //     return NextResponse.redirect(url)
+    // }
 }
 export const config={
     matcher:['/api/auth','/login','/']
