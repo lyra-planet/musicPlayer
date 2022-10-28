@@ -10,6 +10,7 @@ function useSpotify() {
       if (session.error === 'RefreshAccessTokenError') {
         signIn();
       }
+      //@ts-ignore
       SpotifyAPI.setAccessToken(session.user.accessToken);
     }
   }, [session]);
