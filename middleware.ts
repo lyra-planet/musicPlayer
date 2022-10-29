@@ -5,7 +5,7 @@ import type { NextRequest } from 'next/server'
 import { json } from 'stream/consumers';
 
 export const middleware = async (req:NextRequest ) => {
-    const secret = process.env.JWT_SECRET;
+    const secret = process.env.NEXTAUTH_SECRET;
     const token = await getToken({req,secret:secret});
     console.log(req.cookies)
     const {pathname} = req.nextUrl
