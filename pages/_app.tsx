@@ -8,7 +8,7 @@ import Head from 'next/head'
 function MyApp({ Component, pageProps:{session,...pageProps} }: AppProps) {
   return  <SessionProvider session={session}>
             <Head>
-            <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+            {/* <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /> */}
             </Head>
             <RecoilRoot>
             <Component {...pageProps} />

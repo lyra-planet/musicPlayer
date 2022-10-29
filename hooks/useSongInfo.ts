@@ -17,12 +17,12 @@ const useSongInfo = () => {
                         Authorization:`Bearer ${spotifyAPI.getAccessToken()}`
                     }
                 }).then(res=>res.json())
-                const songList  = await fetch(`http://cloud-music.pl-fe.cn/search?keywords=${currentTrackName}`).then(res=>res.json())
+                const songList  = await fetch(`https://netease.magickai.cn/search?keywords=${currentTrackName}&realIP=116.25.146.177`).then(res=>res.json())
                 if(!songList?.result.songs?.[0]){
                     alert("这首歌没在网易云中找到哦")
                     return
                 }
-                const song  = await fetch(`http://cloud-music.pl-fe.cn/song/url?id=${songList.result.songs[0].id}`).then(res=>res.json())
+                const song  = await fetch(`https://netease.magickai.cn/song/url?id=${songList.result.songs[0].id}&realIP=116.25.146.177`).then(res=>res.json())
                 setSongData(song.data[0])
                 setSongInfo(trackInfo)
             }

@@ -9,6 +9,7 @@
     "@heroicons/react": "v1",
     "@types/lodash": "^4.14.186",
     "@types/spotify-web-api-node": "^5.0.7",
+    "jsonwebtoken": "^8.5.1",
     "loadsh": "^0.0.4",
     "lodash": "^4.17.21",
     "next": "latest",

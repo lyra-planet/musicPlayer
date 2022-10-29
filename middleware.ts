@@ -1,13 +1,13 @@
 import {getToken} from 'next-auth/jwt'
+import jwt from "jsonwebtoken";
 import {NextResponse} from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export const middleware = async (req:NextRequest ) => {
-    console.log(req.cookies)
-    const token = await getToken({req,secret:process.env.JWT_SECRET});
-   
-    const {pathname,origin} = req.nextUrl
+    const secret = process.env.JWT_SECRET;
+    const token = await getToken({req,secret:secret});
     console.log(token)
+    const {pathname} = req.nextUrl
     if(pathname.includes('/api/auth')||token){
         
         return NextResponse.next()
